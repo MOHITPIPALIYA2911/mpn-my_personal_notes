@@ -1,0 +1,12 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* background-image: linear-gradient(rgb(20, 7, 28) 0%, rgb(33, 11, 48) 100%); */
+  background-image: linear-gradient(rgb(33, 11, 48) 0%, rgb(20, 7, 28) 100%);
+  background-attachment: fixed;
+}
