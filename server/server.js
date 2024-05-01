@@ -15,9 +15,6 @@ app.use(
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use("/", (req, res) => {
-  res.send({ message: "testing purpose" });
-});
 app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/noteslist", require("./routes/notesListRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
