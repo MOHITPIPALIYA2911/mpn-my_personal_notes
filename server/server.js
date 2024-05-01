@@ -18,8 +18,8 @@ app.use(express.json());
 app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/noteslist", require("./routes/notesListRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
-app.use("/", (res, req) => {
-  res.json({ message: "works" });
+app.use((req, res) => {
+  res.status(404).json({ message: "In working condition, Page Not Found" });
 });
 
 app.use(errorHandler);
