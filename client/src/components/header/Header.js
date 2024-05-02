@@ -25,7 +25,7 @@ const Header = () => {
             <div className="nav-item navbar-search-wrapper mb-0">
               <a className="nav-item nav-link search-toggler fw-normal px-0">
                 <i className="mdi mdi-magnify mdi-24px scaleX-n1-rtl"></i>
-                <span className="d-none d-md-inline-block text-muted">Search (Ctrl+/)</span>
+                <span className="d-none d-md-inline-block text-muted"> Search </span>
               </a>
             </div>
           </div>
