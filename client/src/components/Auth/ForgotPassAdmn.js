@@ -169,7 +169,7 @@ const ForgotPassAdmn = () => {
               <div className="card p-2">
                 <div className="app-brand justify-content-center mt-3">
                   <a href="/" className="app-brand-link gap-2">
-                    <img className="app-brand-text demo text-heading fw-bold w-48 " src="https://deepvecto.com/wp-content/uploads/2023/09/Deepvecto_Logo.png" />
+                    <img className="app-brand-text demo text-heading fw-bold w-48 " src="" />
                   </a>
                 </div>
                 <div className="card-body mt-2 pb-0 ">

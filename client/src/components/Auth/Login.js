@@ -126,9 +126,9 @@ function Login() {
               <hr />
               <p className="text-center">
                 <span>New on our platform? </span>
-                <Link to="/signup">
+                <a href="/signup">
                   <span>Create an account</span>
-                </Link>
+                </a>
               </p>
             </div>
             <img alt="mask" src={image} className="authentication-image d-none d-lg-block" data-app-dark-img="illustrations/auth-basic-login-mask-dark.html" />

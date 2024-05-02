@@ -74,14 +74,14 @@ function Registration() {
         .then(async function (data) {
           console.log(data);
           if (data.status === 200) {
-            triggerNotification("success", "User Signup Successfully");
+            await triggerNotification("success", "User Signup Successfully");
             setFormData({
               email: "",
               username: "",
               password: "",
               name: "",
             });
-            navigate("/login");
+            window.location.href = "/login";
           } else {
             triggerNotification("error", `${data.message}`);
           }
@@ -159,9 +159,10 @@ function Registration() {
 
                 <p className="text-center">
                   <span>Already have an account? </span>
-                  <Link to="/">
+
+                  <a href="/login">
                     <span>Sign in instead</span>
-                  </Link>
+                  </a>
                 </p>
               </div>
             </div>
