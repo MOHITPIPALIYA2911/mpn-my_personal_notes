@@ -9,6 +9,7 @@ import TableViewer from "../../components/tableViewer/TableViewer";
 import config from "../../config";
 
 const ViewNoteBin = () => {
+  const url = config.url;
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(false);
   const token = config.token;
@@ -25,7 +26,7 @@ const ViewNoteBin = () => {
   const fetchNotes = async () => {
     setLoading(true);
     try {
-      await fetch(`${process.env.REACT_APP_BASE_URL}noteslist`, {
+      await fetch(`${url}noteslist`, {
         method: "GET",
         headers: {
           Authorization: "Bearer " + token,
@@ -86,7 +87,7 @@ const ViewNoteBin = () => {
   const handleDeleteNotes = async (deleteId, i) => {
     setLoading(true);
     try {
-      await fetch(`${process.env.REACT_APP_BASE_URL}noteslist/${deleteId}`, {
+      await fetch(`${url}noteslist/${deleteId}`, {
         method: "DELETE",
         headers: {
           Authorization: "Bearer " + token,
@@ -126,7 +127,7 @@ const ViewNoteBin = () => {
   const btnRestoreHandle = async (restoreId, i) => {
     setLoading(true);
     try {
-      await fetch(`${process.env.REACT_APP_BASE_URL}noteslist/restoredfrombin/${restoreId}`, {
+      await fetch(`${url}noteslist/restoredfrombin/${restoreId}`, {
         method: "PUT",
         headers: {
           Authorization: "Bearer " + token,

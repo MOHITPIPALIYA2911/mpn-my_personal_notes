@@ -4,6 +4,7 @@ import config from "../../config";
 import { useNavigate } from "react-router-dom";
 
 const Settings = () => {
+  const url = config.url;
   const navigate = useNavigate();
   const token = config.token;
 
@@ -30,7 +31,7 @@ const Settings = () => {
     }
 
     try {
-      await fetch(`${process.env.REACT_APP_BASE_URL}${config.user_type === "admin" ? "admin" : config.user_type === "teacher" && "teacher"}/change-password`, {
+      await fetch(`${url}${config.user_type === "admin" ? "admin" : config.user_type === "teacher" && "teacher"}/change-password`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

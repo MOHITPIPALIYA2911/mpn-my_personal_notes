@@ -11,6 +11,7 @@ import moment from "moment";
 
 const AddNotes = () => {
   const token = config.token;
+  const url = config.url;
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ const AddNotes = () => {
   const updateFieldValueSet = async () => {
     setLoading(true);
     try {
-      await fetch(`${process.env.REACT_APP_BASE_URL}noteslist/${decodeURIComponent(atob(id))}`, {
+      await fetch(`${url}noteslist/${decodeURIComponent(atob(id))}`, {
         method: "GET",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
@@ -91,7 +92,7 @@ const AddNotes = () => {
       }
 
       // Validate required fields before making the API request
-      fetch(`${process.env.REACT_APP_BASE_URL}noteslist${id ? "/" + decodeURIComponent(atob(id)) : ""}`, {
+      fetch(`${url}noteslist${id ? "/" + decodeURIComponent(atob(id)) : ""}`, {
         method: `${id ? "PUT" : "POST"}`,
         headers: {
           "Content-Type": "application/json",

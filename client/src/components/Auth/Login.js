@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { triggerNotification } from "../message/Msg";
 import logo from "../../img/mpnLogo.png";
+import config from "../../config";
 
 function Login() {
+  const url = config.url;
   const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -36,7 +38,7 @@ function Login() {
 
     // Call the API with formData
     try {
-      await fetch(`${process.env.REACT_APP_BASE_URL}users/login`, {
+      await fetch(`${url}users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

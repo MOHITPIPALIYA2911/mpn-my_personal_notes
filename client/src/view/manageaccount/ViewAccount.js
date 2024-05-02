@@ -10,62 +10,9 @@ const ViewAccount = () => {
   const { id } = useParams();
   const { token, email, username, name } = config;
   const [loading, setLoading] = useState(false);
+  const [studentData, setStudentData] = useState("Active");
   const navigate = useNavigate();
 
-  const [studentData, setStudentData] = useState({
-    first_name: "",
-    last_name: "",
-    user_name: "",
-    email: "",
-    mobileno: "",
-    dob: "",
-    status: "",
-  });
-
-  //----------------------------------------------- select / get / view student ---------------------------------r
-  const fetchStudentData = async () => {
-    setLoading(true);
-    try {
-      await fetch(`${process.env.REACT_APP_BASE_URL}student/${decodeURIComponent(atob(id))}`, {
-        method: "GET",
-        headers: {
-          token: token,
-        },
-      })
-        .then((response) => response.json())
-        .then(async (data) => {
-          if (data.status === 200) {
-            const responseData = data.data;
-            console.log(responseData);
-            // ---------------- date formation -----------
-            const options = { year: "numeric", month: "short", day: "2-digit" };
-
-            const serverDOB = await new Date(responseData.dob);
-            const formattedDOB = serverDOB.toLocaleDateString(undefined, options);
-
-            await setStudentData({
-              first_name: responseData.first_name,
-              last_name: responseData.last_name,
-              user_name: responseData.user_name,
-              email: responseData.email,
-              mobileno: responseData.mobileno,
-              status: responseData.status,
-              dob: formattedDOB,
-            });
-          }
-        });
-    } catch (error) {
-      triggerNotification("error", "Error occurs in fetch data.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    if (id !== undefined) {
-      fetchStudentData(id);
-    }
-  }, [id]);
   return (
     <>
       <Breadcrumb txt="Manage Account" subpath={["View My Account"]} />
@@ -106,7 +53,7 @@ const ViewAccount = () => {
                   </li>
                   <li className="d-flex align-items-center mb-3">
                     <i className="mdi mdi-check mdi-24px"></i>
-                    <span className="fw-medium mx-2">Status:</span> <span>{studentData.status == "1" ? "Not Active" : " Active"}</span>
+                    <span className="fw-medium mx-2">Status:</span> <span>{studentData}</span>
                   </li>
                 </ul>
               </div>

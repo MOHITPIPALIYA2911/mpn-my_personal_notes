@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c5a23bbd.css",
-    "main.js": "/static/js/main.0b20de7e.js",
+    "main.js": "/static/js/main.44c38489.js",
     "static/js/453.8cb464c2.chunk.js": "/static/js/453.8cb464c2.chunk.js",
     "static/media/materialdesignicons-webfont9445.eot?v=7.2.96": "/static/media/materialdesignicons-webfont9445.d95c91e88cc28d3305af.eot",
     "static/media/materialdesignicons-webfontd41d.eot": "/static/media/materialdesignicons-webfontd41d.d95c91e88cc28d3305af.eot",
@@ -287,11 +287,11 @@
     "static/media/bd.svg": "/static/media/bd.0ad8c443ef4d47ea0497.svg",
     "static/media/id.svg": "/static/media/id.f624e2c8444a7794b357.svg",
     "main.c5a23bbd.css.map": "/static/css/main.c5a23bbd.css.map",
-    "main.0b20de7e.js.map": "/static/js/main.0b20de7e.js.map",
+    "main.44c38489.js.map": "/static/js/main.44c38489.js.map",
     "453.8cb464c2.chunk.js.map": "/static/js/453.8cb464c2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c5a23bbd.css",
-    "static/js/main.0b20de7e.js"
+    "static/js/main.44c38489.js"
   ]
 }

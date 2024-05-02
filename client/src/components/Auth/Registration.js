@@ -3,8 +3,10 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { triggerNotification } from "../message/Msg";
 import logo from "../../img/mpnLogo.png";
+import config from "../../config";
 
 function Registration() {
+  const url = config.url;
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
@@ -59,7 +61,7 @@ function Registration() {
     // Call the API with formData
     console.log(JSON.stringify(formData));
     try {
-      await fetch(`${process.env.REACT_APP_BASE_URL}users/register`, {
+      await fetch(`${url}users/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

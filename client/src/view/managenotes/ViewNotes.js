@@ -9,6 +9,7 @@ import TableViewer from "../../components/tableViewer/TableViewer";
 import config from "../../config";
 
 const ViewNotes = () => {
+  const url = config.url;
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(false);
   const token = config.token;
@@ -25,7 +26,7 @@ const ViewNotes = () => {
   const fetchNotes = async () => {
     setLoading(true);
     try {
-      await fetch(`${process.env.REACT_APP_BASE_URL}noteslist`, {
+      await fetch(`${url}noteslist`, {
         method: "GET",
         headers: {
           Authorization: "Bearer " + token,
@@ -87,7 +88,7 @@ const ViewNotes = () => {
   const handleDeleteNotes = async (deleteId, i) => {
     setLoading(true);
     try {
-      await fetch(`${process.env.REACT_APP_BASE_URL}noteslist/bin/${deleteId}`, {
+      await fetch(`${url}noteslist/bin/${deleteId}`, {
         method: "PUT",
         headers: {
           Authorization: "Bearer " + token,

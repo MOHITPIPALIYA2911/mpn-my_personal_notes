@@ -3,8 +3,10 @@ import image from "../../assetsCon/assets/img/illustrations/auth-basic-login-mas
 import { Link, useNavigate } from "react-router-dom";
 import { triggerNotification } from "../message/Msg";
 import Swal from "sweetalert2";
+import config from "../../config";
 
 const ForgotPassAdmn = () => {
+  const url = config.url;
   const navigate = useNavigate();
 
   //------------------------------------- state management ---------------------------------------------
@@ -61,7 +63,7 @@ const ForgotPassAdmn = () => {
   };
   const handleSendEmail = async () => {
     try {
-      await fetch(`${process.env.REACT_APP_BASE_URL}admin/password-reset`, {
+      await fetch(`${url}admin/password-reset`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -95,7 +97,7 @@ const ForgotPassAdmn = () => {
   // --------------------------------------------- inputed otp submit ---------------------------------------------C
   const btnSubmitOtp = async () => {
     try {
-      await fetch(`${process.env.REACT_APP_BASE_URL}admin/verify-otp`, {
+      await fetch(`${url}admin/verify-otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -128,7 +130,7 @@ const ForgotPassAdmn = () => {
   // ---------------------------------- submit change password form ---------------------------------------------C
   const btnSubmitForm = async () => {
     try {
-      await fetch(`${process.env.REACT_APP_BASE_URL}admin/set-new-password`, {
+      await fetch(`${url}admin/set-new-password`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
