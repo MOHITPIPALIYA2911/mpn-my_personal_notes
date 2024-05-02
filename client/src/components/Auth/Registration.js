@@ -111,8 +111,8 @@ function Registration() {
                     <label htmlFor="name">Full Name</label>
                   </div>
                   <div className="form-floating form-floating-outline mb-3">
-                    <input type="text" className="form-control" id="username" name="username" value={formData.username} onChange={handleChange} placeholder="Enter your username" autoFocus />
-                    <label htmlFor="username">User Name</label>
+                    <input type="text" className="form-control" id="username" name="username" value={formData.username} onChange={handleChange} placeholder="Enter your nick name" autoFocus />
+                    <label htmlFor="username">Nick Name</label>
                   </div>
                   <div className="form-floating form-floating-outline mb-3">
                     <input type="text" className="form-control" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="Enter your email" />
