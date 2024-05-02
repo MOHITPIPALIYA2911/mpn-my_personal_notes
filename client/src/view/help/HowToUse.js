@@ -15,6 +15,15 @@ const HowToUse = () => {
           <div className="px-3 pb-3">
             <div className="card mb-3">
               <div className="card-body">
+                <h6>Accessibility</h6>
+                <p>
+                  This app is designed to be responsive and accessible across various devices, including mobile phones, tablets, and laptops. We strive to ensure that all users, regardless of their device, can use our app comfortably and efficiently.
+                </p>
+              </div>
+            </div>
+
+            <div className="card mb-3">
+              <div className="card-body">
                 <h6>Manage Notes</h6>
                 <ul className="list-disc">
                   <li>To add a note, navigate to "Manage Notes" and click on "Add Note." Enter a title and the content of your note.</li>
